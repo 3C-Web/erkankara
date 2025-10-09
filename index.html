@@ -71,10 +71,13 @@
 
     .subrole{
       margin:10px 0 18px;
-      font-size:0.95rem;
+      font-size:0.78rem;       /* ⬅️ slightly smaller to fit one line */
       font-weight:500;
       color:#4b5563;
       font-style:italic;
+      line-height:1.25;
+      letter-spacing:-0.2px;   /* ⬅️ compact letter spacing */
+      white-space:nowrap;      /* ⬅️ keeps text in one single line */
     }
 
     .grid{ 
@@ -86,6 +89,7 @@
     .btn{
       display:flex; 
       align-items:center; 
+      justify-content:flex-start;
       gap:12px;
       padding:14px 16px; 
       border-radius:var(--radius);
@@ -96,6 +100,7 @@
       box-shadow:var(--shadow);
       transition:background .15s ease, transform .04s ease, border-color .15s ease;
       font-weight:500;
+      text-align:left;
     }
 
     .btn:hover{ 
@@ -119,6 +124,13 @@
       font-size:1.02rem; 
       font-weight:600; 
       font-variant-numeric:tabular-nums; 
+    }
+
+    /* 📱 ultra-small device adjustment */
+    @media (max-width:380px) {
+      .subrole {
+        font-size:0.75rem;
+      }
     }
   </style>
 </head>
