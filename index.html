@@ -22,6 +22,7 @@
       --radius:16px;
       --anthrazit:#2F2F2F;
       --icon:#4b9a89;
+      --line:#d4d4d4;
     }
 
     *{box-sizing:border-box}
@@ -57,9 +58,17 @@
     h1{
       margin:-25px 0 0; 
       font-size:1.9rem;
-      font-weight:700;
       color:var(--anthrazit);
       letter-spacing:.2px;
+      font-weight:400;
+    }
+
+    h1 span:first-child {
+      font-weight:500; /* Erkan - medium weight */
+    }
+
+    h1 span:last-child {
+      font-weight:700; /* Kara - bold */
     }
 
     .role{
@@ -70,14 +79,39 @@
     }
 
     .subrole{
-      margin:10px 0 18px;
+      margin:10px 0 8px;
       font-size:0.78rem;
       font-weight:500;
       color:#4b5563;
-      font-style:italic;
       line-height:1.25;
       letter-spacing:-0.2px;
       white-space:nowrap;
+    }
+
+    .quote-container{
+      position:relative;
+      margin:12px auto 16px;
+      padding:10px 0;
+      width:100%;
+      max-width:420px;
+    }
+    .quote-container::before,
+    .quote-container::after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      border-top:1px solid var(--line);
+      transform:translateZ(0);
+    }
+    .quote-container::before{ top:0; }
+    .quote-container::after{ bottom:0; }
+
+    .quote{
+      font-size:0.82rem;
+      font-style:italic;
+      color:#2f2f2f;
+      margin:0;
+      line-height:1.45;
     }
 
     .grid{ 
@@ -133,6 +167,7 @@
 
     @media (max-width:380px) {
       .subrole { font-size:0.75rem; }
+      .quote { font-size:0.78rem; }
     }
   </style>
 </head>
@@ -140,9 +175,13 @@
   <main class="card">
     <img src="logo.png" alt="Logo Car Competence Center" class="logo" />
 
-    <h1>Erkan Kara</h1>
+    <h1><span>Erkan</span> <span>Kara</span></h1>
     <div class="role">Betriebsleiter</div>
     <div class="subrole">Experte für Smart-Repair & Sonderlackierungen</div>
+
+    <div class="quote-container">
+      <p class="quote">"Spezialisiert auf hochwertige Lackierungen<br>und präzise Smart-Repair-Techniken"</p>
+    </div>
 
     <div class="grid">
       <!-- Phone -->
